@@ -13,20 +13,33 @@ public class Steering3d : MonoBehaviour
     public float mantenerDist = 1f;
 
     private Vector3 velocity;
+    private Enemy enemy;
     public Transform target;
+    private Rigidbody rb;
 
+    private void Awake()
+    {
+
+        velocity = Vector3.zero;
+
+        enemy = this.GetComponent<Enemy>();
+    }
     private void Start()
     {
-        velocity = Vector3.zero;
+
     }
+
 
     private void Update()
     {
+        target = enemy.torreActual.transform.Find("Origen");
+        Debug.Log(enemy.torreActual);
         var desiredVelocity = target.transform.position - transform.position;
         // Si estamos dentro de la distancia mínima, detener el movimiento
         if (desiredVelocity.magnitude < mantenerDist)
         {
             velocity = Vector3.zero;
+
             return; // Salir de la función de Update para no actualizar la posición
         }
 

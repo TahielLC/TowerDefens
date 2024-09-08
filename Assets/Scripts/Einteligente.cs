@@ -9,6 +9,7 @@ public class Einteligente : Enemy
     private void LlamadaDBack()
     {
         // aca poder especial de este zoombi el cual hace retornar al resto de zombis
+        
 
     }
     private void Mutar()

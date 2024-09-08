@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 3977230102001430470}
   - component: {fileID: 4599848396974944010}
   - component: {fileID: 6284058223472192765}
+  - component: {fileID: 669523048392994036}
   m_Layer: 0
   m_Name: Zinteligente
   m_TagString: Untagged
@@ -215,7 +216,7 @@ Transform:
   m_Children:
   - {fileID: 5901006536558759549}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8376204212975481449
 MeshFilter:
@@ -305,7 +306,7 @@ MonoBehaviour:
   Mass: 12
   MaxVelocity: 2
   MaxForce: 80
-  mantenerDist: 0.8
+  mantenerDist: 4
   target: {fileID: 0}
 --- !u!114 &6284058223472192765
 MonoBehaviour:
@@ -324,8 +325,41 @@ MonoBehaviour:
   isDead: 0
   maxlife: 100
   currentLife: 0
-  fillLifeImage: {fileID: 0}
+  fillLifeImage: {fileID: 2735224748970520189}
   "da\xF1oAUnidad": 0
+  danoEstructuras: 10
+  cooldaownAtaque: 2
+  torres: []
+  torreActual: {fileID: 0}
+  range: 7.16
+  rotarHacia: {fileID: 2527081701693283640}
+--- !u!54 &669523048392994036
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3829801903201181149}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5281350257862102781
 GameObject:
   m_ObjectHideFlags: 0

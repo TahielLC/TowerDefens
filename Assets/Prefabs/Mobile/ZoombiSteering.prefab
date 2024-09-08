@@ -270,9 +270,10 @@ GameObject:
   - component: {fileID: 4660790624678304531}
   - component: {fileID: 6559114796162905812}
   - component: {fileID: 5422708083753691670}
+  - component: {fileID: 8805542023461809077}
   m_Layer: 0
   m_Name: ZoombiSteering
-  m_TagString: Untagged
+  m_TagString: zoombiSteerign
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,10 +380,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mass: 12
-  MaxVelocity: 2
+  MaxVelocity: 6
   MaxForce: 80
-  mantenerDist: 2
-  target: {fileID: 8537535165218251088, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
+  mantenerDist: 4
+  target: {fileID: 0}
 --- !u!114 &5422708083753691670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,5 +407,32 @@ MonoBehaviour:
   cooldaownAtaque: 2
   torres: []
   torreActual: {fileID: 0}
-  range: 1
+  range: 23.1
   rotarHacia: {fileID: 8623976158995777098}
+--- !u!54 &8805542023461809077
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951546874318984039}
+  serializedVersion: 4
+  m_Mass: 5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 87.71}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0

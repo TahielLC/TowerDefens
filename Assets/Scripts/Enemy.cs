@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     private int targetIndex = 1;
     public float movementSpeed = 4;
     public float rotationSpeed = 6;
+
     [Header("Life")]
     public bool isDead;
     public float maxlife = 100;
