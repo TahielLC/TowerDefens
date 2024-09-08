@@ -840,6 +840,10 @@ PrefabInstance:
       value: ZoombiSteering
       objectReference: {fileID: 0}
     - target: {fileID: 8951546874318984039, guid: 485aa6cc43c2347478feae357aab44a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951546874318984039, guid: 485aa6cc43c2347478feae357aab44a0, type: 3}
       propertyPath: m_TagString
       value: zoombiSteerign
       objectReference: {fileID: 0}
@@ -2537,11 +2541,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1959716195 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2527081701693283640, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
-  m_PrefabInstance: {fileID: 5150924822662333921}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2015498322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2858131589648915025, guid: 30cebe2aedffd414fb4c0debfad6f6f1, type: 3}
@@ -2876,7 +2875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2527081701693283640, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.17
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2527081701693283640, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2910,30 +2909,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3564853226691892869, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
+      propertyPath: range
+      value: 10.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564853226691892869, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
+      propertyPath: rangoAliados
+      value: 6.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564853226691892869, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
+      propertyPath: ataqueInteligente
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3829801903201181149, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
       propertyPath: m_Name
       value: Zinteligente
       objectReference: {fileID: 0}
-    - target: {fileID: 3829801903201181149, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4599848396974944010, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4599848396974944010, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6284058223472192765, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
-      propertyPath: range
-      value: 12.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 6284058223472192765, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
-      propertyPath: rotarHacia
-      value: 
-      objectReference: {fileID: 1959716195}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

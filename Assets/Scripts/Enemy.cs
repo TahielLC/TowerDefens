@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     public int dañoAUnidad;
     [Header("Atacar")]
     public float danoEstructuras = 10f;
-    public float cooldaownAtaque = 2f;
+    public float cooldownAtaque = 2f;
     public List<Tower> torres = new List<Tower>();
     public Tower torreActual;
     public float range = 1f;
@@ -51,26 +51,26 @@ public class Enemy : MonoBehaviour
         currentLife = newLife;
         StartCoroutine(AnimationDamge());
     }
-    private IEnumerator CooldownAtacar()
+    public IEnumerator CooldownAtacar()
     {
         while (true)
         {
             if (torreActual)
             {
                 Atacar();
-                yield return new WaitForSeconds(cooldaownAtaque);
+                yield return new WaitForSeconds(cooldownAtaque);
             }
             yield return null;
         }
     }
     private void Atacar()
     {
-        //Steering3d steering3 = this.GetComponent<Steering3d>();
+
 
         torreActual.RecibirDanno(danoEstructuras);
 
     }
-    private void TorreDetection()
+    public void TorreDetection()
     {
         torres = Physics.OverlapSphere(transform.position, range).Where(currentTorre => currentTorre.GetComponent<Tower>()).Select(currentTorre => currentTorre.GetComponent<Tower>()).ToList();
 
@@ -84,7 +84,7 @@ public class Enemy : MonoBehaviour
             torreActual = null;
         }
     }
-    private void LookAtRotation()
+    public void LookAtRotation()
     {
         if (torreActual)
         {

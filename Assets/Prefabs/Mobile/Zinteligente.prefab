@@ -193,8 +193,9 @@ GameObject:
   - component: {fileID: 7096270142753587033}
   - component: {fileID: 3977230102001430470}
   - component: {fileID: 4599848396974944010}
-  - component: {fileID: 6284058223472192765}
   - component: {fileID: 669523048392994036}
+  - component: {fileID: 3564853226691892869}
+  - component: {fileID: 7989197057578747352}
   m_Layer: 0
   m_Name: Zinteligente
   m_TagString: Untagged
@@ -308,31 +309,6 @@ MonoBehaviour:
   MaxForce: 80
   mantenerDist: 4
   target: {fileID: 0}
---- !u!114 &6284058223472192765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3829801903201181149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3bd864807c9c0847a041920e21eb0aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 4
-  rotationSpeed: 6
-  isDead: 0
-  maxlife: 100
-  currentLife: 0
-  fillLifeImage: {fileID: 2735224748970520189}
-  "da\xF1oAUnidad": 0
-  danoEstructuras: 10
-  cooldaownAtaque: 2
-  torres: []
-  torreActual: {fileID: 0}
-  range: 7.16
-  rotarHacia: {fileID: 2527081701693283640}
 --- !u!54 &669523048392994036
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -360,6 +336,53 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3564853226691892869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3829801903201181149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a596d1eefc325438238eeb94f12fbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 4
+  rotationSpeed: 6
+  isDead: 0
+  maxlife: 100
+  currentLife: 0
+  fillLifeImage: {fileID: 2735224748970520189}
+  "da\xF1oAUnidad": 0
+  danoEstructuras: 10
+  cooldownAtaque: 2
+  torres: []
+  torreActual: {fileID: 0}
+  range: 10.2
+  rotarHacia: {fileID: 2527081701693283640}
+  inteligenicia: 10
+  ataqueInteligente: 3.2
+  aliados: []
+  rangoAliados: 6.03
+  tiempoABackear: 15
+--- !u!114 &7989197057578747352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3829801903201181149}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60bb1ca0cec9a3c498ec4b0149baa91b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mass: 15
+  MaxVelocity: 3
+  MaxForce: 15
+  distanciaSeguridad: 40
+  target: {fileID: 0}
 --- !u!1 &5281350257862102781
 GameObject:
   m_ObjectHideFlags: 0

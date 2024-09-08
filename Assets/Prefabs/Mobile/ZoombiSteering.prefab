@@ -270,7 +270,8 @@ GameObject:
   - component: {fileID: 4660790624678304531}
   - component: {fileID: 6559114796162905812}
   - component: {fileID: 5422708083753691670}
-  - component: {fileID: 8805542023461809077}
+  - component: {fileID: 2313370187970634187}
+  - component: {fileID: 7410753504294656704}
   m_Layer: 0
   m_Name: ZoombiSteering
   m_TagString: zoombiSteerign
@@ -382,7 +383,7 @@ MonoBehaviour:
   Mass: 12
   MaxVelocity: 6
   MaxForce: 80
-  mantenerDist: 4
+  mantenerDist: 2.5
   target: {fileID: 0}
 --- !u!114 &5422708083753691670
 MonoBehaviour:
@@ -404,12 +405,12 @@ MonoBehaviour:
   fillLifeImage: {fileID: 4884396602365973407}
   "da\xF1oAUnidad": 0
   danoEstructuras: 10
-  cooldaownAtaque: 2
+  cooldownAtaque: 2
   torres: []
   torreActual: {fileID: 0}
-  range: 23.1
+  range: 15.7
   rotarHacia: {fileID: 8623976158995777098}
---- !u!54 &8805542023461809077
+--- !u!54 &2313370187970634187
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -436,3 +437,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7410753504294656704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951546874318984039}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60bb1ca0cec9a3c498ec4b0149baa91b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mass: 15
+  MaxVelocity: 3
+  MaxForce: 15
+  distanciaSeguridad: 40.31
+  target: {fileID: 0}
