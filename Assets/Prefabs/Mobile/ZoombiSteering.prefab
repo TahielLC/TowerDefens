@@ -291,7 +291,7 @@ Transform:
   m_Children:
   - {fileID: 7991347849866785156}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5176746182059829466
 MeshFilter:
@@ -381,7 +381,7 @@ MonoBehaviour:
   Mass: 12
   MaxVelocity: 2
   MaxForce: 80
-  mantenerDist: 0.8
+  mantenerDist: 2
   target: {fileID: 8537535165218251088, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
 --- !u!114 &5422708083753691670
 MonoBehaviour:
@@ -402,3 +402,9 @@ MonoBehaviour:
   currentLife: 0
   fillLifeImage: {fileID: 4884396602365973407}
   "da\xF1oAUnidad": 0
+  danoEstructuras: 10
+  cooldaownAtaque: 2
+  torres: []
+  torreActual: {fileID: 0}
+  range: 1
+  rotarHacia: {fileID: 8623976158995777098}

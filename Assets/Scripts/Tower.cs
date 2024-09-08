@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using System.Linq;
-
+using UnityEngine.UI;
+using System.Dynamic;
 public class Tower : MonoBehaviour
 {
     public string towerName;
@@ -18,10 +19,12 @@ public class Tower : MonoBehaviour
     public float timetoShot = 1;
 
     public Enemy currenTarget;
-
-
     public List<Enemy> listCurrenTargets = new List<Enemy>();
-
+    [Header("Life")]
+    public float life = 100;
+    public float currentLife = 0;
+    public Image fillLifeImage;
+    public bool torreInactiva;
 
     public Transform rotationPart;
     private void Update()
@@ -29,8 +32,33 @@ public class Tower : MonoBehaviour
         EnemyDetection();
         LookRotation();
     }
+    public void RecibirDanno(float danno)
+    {
+        var nwLife = currentLife - danno;
+        if (torreInactiva)
+        {
+            return;
+        }
+        if (nwLife <= 0)
+        {
+            TorreInactiva();
+        }
+        currentLife = nwLife;
+        var fillValue = currentLife * 1 / 100;
+
+        fillLifeImage.fillAmount = fillValue;
+        currentLife = nwLife;
+    }
+    public void TorreInactiva()
+    {
+        torreInactiva = true;
+        Debug.Log("torre inactiva");
+        currentLife = 0;
+        fillLifeImage.fillAmount = 0;
+    }
     private void Start()
     {
+        currentLife = life;
         StartCoroutine(ShootTimer());
     }
     private void EnemyDetection()

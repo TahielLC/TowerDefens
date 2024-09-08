@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+using System.Dynamic;
 public class Enemy : MonoBehaviour
 {
     [Header("Movement")]
@@ -14,10 +16,18 @@ public class Enemy : MonoBehaviour
     public float currentLife = 0;
     public Image fillLifeImage;
     public int dañoAUnidad;
-
+    [Header("Atacar")]
+    public float danoEstructuras = 10f;
+    public float cooldaownAtaque = 2f;
+    public List<Tower> torres = new List<Tower>();
+    public Tower torreActual;
+    public float range = 1f;
+    public Transform rotarHacia;
     private void Start()
     {
+
         currentLife = maxlife;
+        StartCoroutine(CooldownAtacar());
     }
     public void TakeDamage(float dmg)
     {
@@ -40,6 +50,48 @@ public class Enemy : MonoBehaviour
         currentLife = newLife;
         StartCoroutine(AnimationDamge());
     }
+    private IEnumerator CooldownAtacar()
+    {
+        while (true)
+        {
+            if (torreActual)
+            {
+                Atacar();
+                yield return new WaitForSeconds(cooldaownAtaque);
+            }
+            yield return null;
+        }
+    }
+    private void Atacar()
+    {
+        //Steering3d steering3 = this.GetComponent<Steering3d>();
+
+        torreActual.RecibirDanno(danoEstructuras);
+
+    }
+    private void TorreDetection()
+    {
+        torres = Physics.OverlapSphere(transform.position, range).Where(currentTorre => currentTorre.GetComponent<Tower>()).Select(currentTorre => currentTorre.GetComponent<Tower>()).ToList();
+
+        if (torres.Count > 0)
+        {
+            torreActual = torres[0];
+
+        }
+        else if (torres.Count == 0)
+        {
+            torreActual = null;
+        }
+    }
+    private void LookAtRotation()
+    {
+        if (torreActual)
+        {
+            rotarHacia.LookAt(torreActual.transform);
+        }
+
+    }
+
 
     private IEnumerator AnimationDamge()
     {
@@ -58,11 +110,16 @@ public class Enemy : MonoBehaviour
         //Destroy(this);
 
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, range);
+
+    }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(dañoAUnidad);
-        }
+        TorreDetection();
+        LookAtRotation();
     }
+
 }
