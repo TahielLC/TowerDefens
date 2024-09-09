@@ -20,6 +20,7 @@ public class Flee : MonoBehaviour
     private void Update()
     {
         // Calcular la dirección inversa (de escape) desde el objetivo
+        
         Vector3 desiredVelocity = transform.position - target.position;
 
         // Si estamos más lejos que la distancia de seguridad, no hacer nada

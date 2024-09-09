@@ -25,7 +25,7 @@ public class Einteligente : Enemy
                 aliado.GetComponent<Steering3d>().enabled = false;
                 aliado.GetComponent<Flee>().enabled = true;
             }
-            
+
             // aliados[1].GetComponent<Steering3d>().enabled = false;
             // aliados[1].GetComponent<Flee>().enabled = true;
             // aliados[1] = null;
@@ -68,6 +68,7 @@ public class Einteligente : Enemy
     private void Mutar()
     {
         // el zoombi muta y se vuelve mas inteligente, podiendo hasta curar enemigos al atender a back
+        
     }
 
     private void Sacrificar()

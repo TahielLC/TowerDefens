@@ -20,12 +20,13 @@ public class Steering3d : MonoBehaviour
     private void Awake()
     {
 
-        velocity = Vector3.zero;
-
-        enemy = this.GetComponent<Enemy>();
     }
     private void Start()
     {
+        velocity = Vector3.zero;
+
+        enemy = this.GetComponent<Enemy>();
+
 
     }
 
@@ -37,7 +38,8 @@ public class Steering3d : MonoBehaviour
 
     private void Update()
     {
-        target = enemy.torreActual.transform.Find("Origen");
+        //target = enemy.torreActual.transform.Find("Origen");
+        //        target = enemy.torreActual.transform;
         // solucionar cuando me salgo del rango de los objetos y no le las paso coordenadas a quien seguir
         Debug.Log(enemy.torreActual);
         var desiredVelocity = target.transform.position - transform.position;

@@ -11,13 +11,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameObject enemyInstancia = Instantiate(enemyPrefab, puntoSpawn.position, puntoSpawn.rotation);
+        enemyInstancia.GetComponent<Steering3d>().target = torreTarget.Find("Origen");
 
-        Steering3d enemyScript = enemyInstancia.GetComponent<Steering3d>();
+        //Steering3d enemyScript = enemyInstancia.GetComponent<Steering3d>();
 
-        if (enemyScript != null)
-        {
-            enemyScript.target = torreTarget;
-        }
+        // if (enemyScript != null)
+        // {
+        //     enemyScript.target = torreTarget;
+        // }
     }
 
     // Update is called once per frame
