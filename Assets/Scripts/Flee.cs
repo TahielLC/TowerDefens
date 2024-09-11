@@ -8,7 +8,7 @@ public class Flee : MonoBehaviour
     public float MaxVelocity = 3f;
     public float MaxForce = 15f;
 
-    public float distanciaSeguridad = 5f;  // Distancia mínima a la que escapar
+    public float distanciaSeguridad;  // Distancia mínima a la que escapar
     private Vector3 velocity;
     public Transform target;
 
@@ -20,7 +20,7 @@ public class Flee : MonoBehaviour
     private void Update()
     {
         // Calcular la dirección inversa (de escape) desde el objetivo
-        
+
         Vector3 desiredVelocity = transform.position - target.position;
 
         // Si estamos más lejos que la distancia de seguridad, no hacer nada

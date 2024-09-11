@@ -7,11 +7,16 @@ public class SpawPoint : MonoBehaviour
     public GameObject[] prefab;
     [SerializeField] float radioSpawn = 1.5f;
 
+
+    private GameObject laIstancia;
+
     //refactorizar esto
-    public Transform torreTarget;
+    //public Transform torreTarget;
+    public Transform torreTargetAdentro;
     // Start is called before the first frame update
     void Start()
     {
+        //  torreTarget = enemyInstancia.GetComponent<Enemy>().torreActual.transform;
     }
     private void Awake()
     {
@@ -27,8 +32,11 @@ public class SpawPoint : MonoBehaviour
             Vector3 newSpawPoins = new Vector3(Mathf.Cos(angle) * radioSpawn, 0, Mathf.Sin(angle) * radioSpawn) + transform.position;
 
 
-            GameObject laIstancia = Instantiate(prefab[i], newSpawPoins, Quaternion.identity);
-            laIstancia.GetComponent<Steering3d>().target = torreTarget.Find("Origen");
+            laIstancia = Instantiate(prefab[i], newSpawPoins, Quaternion.identity);
+            torreTargetAdentro = laIstancia.GetComponent<Enemy>().torreActual.transform;
+
+            laIstancia.GetComponent<Steering3d>().target = torreTargetAdentro.Find("Origen");
+            laIstancia.GetComponent<Flee>().target = torreTargetAdentro.Find("Origen");
             // Transform torreTarget = prefab[i].GetComponent<Enemy>().torreActual.transform;
             //refactorizar esto
             //prefab[i].GetComponent<Steering3d>().target = torreTarget.Find("Origen");

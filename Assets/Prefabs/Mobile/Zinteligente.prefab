@@ -366,6 +366,7 @@ MonoBehaviour:
   ataqueInteligente: 3.2
   aliados: []
   rangoAliados: 6.03
+  aMutar: 10
   tiempoABackear: 15
 --- !u!114 &7989197057578747352
 MonoBehaviour:
@@ -382,7 +383,7 @@ MonoBehaviour:
   Mass: 15
   MaxVelocity: 3
   MaxForce: 15
-  distanciaSeguridad: 40
+  distanciaSeguridad: 25
   target: {fileID: 0}
 --- !u!1 &5281350257862102781
 GameObject:

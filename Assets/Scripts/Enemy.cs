@@ -24,6 +24,13 @@ public class Enemy : MonoBehaviour
     public Tower torreActual;
     public float range = 1f;
     public Transform rotarHacia;
+
+
+    
+    private void Awake()
+    {
+        TorreDetection();
+    }
     private void Start()
     {
 
@@ -83,6 +90,7 @@ public class Enemy : MonoBehaviour
         {
             torreActual = null;
         }
+        
     }
     public void LookAtRotation()
     {

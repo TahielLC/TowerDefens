@@ -41,7 +41,7 @@ public class Steering3d : MonoBehaviour
         //target = enemy.torreActual.transform.Find("Origen");
         //        target = enemy.torreActual.transform;
         // solucionar cuando me salgo del rango de los objetos y no le las paso coordenadas a quien seguir
-        Debug.Log(enemy.torreActual);
+//        Debug.Log(enemy.torreActual);
         var desiredVelocity = target.transform.position - transform.position;
         // Si estamos dentro de la distancia mínima, detener el movimiento
         if (desiredVelocity.magnitude < mantenerDist)

@@ -11,7 +11,10 @@ public class Einteligente : Enemy
     private float sumarAtaque = 0.3f;
     public List<Enemy> aliados = new List<Enemy>();
     public float rangoAliados = 0;
+
+    public float aMutar = 10f;
     public float tiempoABackear = 25f;
+    private float tiempoTranscurrido = 0;
     private Enemy aliadoActual;
     private void LlamadaDBack()
     {
@@ -65,10 +68,19 @@ public class Einteligente : Enemy
         Gizmos.DrawWireSphere(transform.position, rangoAliados);
     }
 
-    private void Mutar()
+    private void Mutar(float tiempo)
     {
-        // el zoombi muta y se vuelve mas inteligente, podiendo hasta curar enemigos al atender a back
-        
+        // el zoombi muta y se vuelve mas inteligente, podiendo hasta curar enemigos ,al atender a backear
+        float darHabilidad = 20f;
+        float incrementarInteligencia = 2f;
+        inteligenicia += incrementarInteligencia;
+
+        if (inteligenicia >= darHabilidad)
+        {
+
+        }
+
+
     }
 
     private void Sacrificar()
@@ -114,6 +126,12 @@ public class Einteligente : Enemy
     void Update()
     {
         tiempoABackear -= Time.deltaTime;
+        tiempoTranscurrido += Time.deltaTime;
+        if (tiempoTranscurrido >= aMutar)
+        {
+            Mutar(tiempoTranscurrido);
+            tiempoTranscurrido = 0;
+        }
         //Debug.Log(tiempoABackear);
         LlamadaDBack();
         TorreDetection();

@@ -514,7 +514,8 @@ MonoBehaviour:
   "da\xF1oAUnidad": 0
   danoEstructuras: 10
   cooldownAtaque: 2
-  torres: []
+  torres:
+  - {fileID: 0}
   torreActual: {fileID: 0}
   range: 17.4
   rotarHacia: {fileID: 7388346032560645720}
@@ -560,5 +561,5 @@ MonoBehaviour:
   Mass: 15
   MaxVelocity: 3
   MaxForce: 15
-  distanciaSeguridad: 40.31
+  distanciaSeguridad: 40
   target: {fileID: 0}
