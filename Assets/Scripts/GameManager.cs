@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     GameObject enemyInstancia;
     // Start is called before the first frame update
 
-    private void Spaw()
+    private void Spawn()
     {
 
         enemyInstancia = Instantiate(enemyPrefab, puntoSpawn.position, puntoSpawn.rotation);
@@ -22,15 +22,14 @@ public class GameManager : MonoBehaviour
         enemyInstancia.GetComponent<Steering3d>().target = torreTarget.Find("Origen");
         enemyInstancia.GetComponent<Flee>().target = torreTarget.Find("Origen");
     }
+    private void Awake()
+    {
+
+        Spawn();
+    }
     void Start()
     {
-        Spaw();
-        //Steering3d enemyScript = enemyInstancia.GetComponent<Steering3d>();
 
-        // if (enemyScript != null)
-        // {
-        //     enemyScript.target = torreTarget;
-        // }
     }
 
 

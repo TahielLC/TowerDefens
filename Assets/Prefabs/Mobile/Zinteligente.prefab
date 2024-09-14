@@ -371,11 +371,9 @@ MonoBehaviour:
   habilidades:
   - {fileID: 11400000, guid: fd5687bc0140dc44aa87f74073b7d98c, type: 2}
   - {fileID: 11400000, guid: e9dcdd1eb9b3ea2479fe02f0bd7047c6, type: 2}
-  agregarLeHabilidades:
-  - {fileID: 11400000, guid: fd5687bc0140dc44aa87f74073b7d98c, type: 2}
-  - {fileID: 11400000, guid: e9dcdd1eb9b3ea2479fe02f0bd7047c6, type: 2}
   aMutar: 10
   tiempoABackear: 15
+  nivelMutacion: 0
 --- !u!114 &7989197057578747352
 MonoBehaviour:
   m_ObjectHideFlags: 0

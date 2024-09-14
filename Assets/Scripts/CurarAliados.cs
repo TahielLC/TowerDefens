@@ -7,12 +7,11 @@ public class CurarAliados : Habilidad
 {
     public override void AplicarHabilidad(Einteligente enemy)
     {
+        // mover esto en donde pertenezca, no esta bien que una habilidad le sume inteligencia
+        // float incrementarInteligencia = 2f;
+        // enemy.inteligenciaBase += incrementarInteligencia;
 
-        float darHabilidad = 20f;
-        float incrementarInteligencia = 2f;
-        enemy.inteligenciaBase += incrementarInteligencia;
-        
-        if (enemy.inteligenciaBase >= darHabilidad)
+        if (enemy.nivelMutacion == NivelMutacion.Nivel1)
         {
             foreach (var aliado in enemy.aliados)
             {

@@ -8,9 +8,12 @@ public class BackAll : Habilidad
     {
 
         enemyInt.ReunirAliados();
-        float horaDeBackear = 5f;
-        if (horaDeBackear > enemyInt.tiempoABackear)
+        //float horaDeBackear = 5f;
+        Debug.Log(enemyInt.inteligenciaBase);
+        if (enemyInt.nivelMutacion == NivelMutacion.Nivel2)
         {
+
+            Debug.Log("Hablidad BACK Aplicada");
             foreach (var aliado in enemyInt.aliados)
             {
                 aliado.GetComponent<Steering3d>().enabled = false;
@@ -21,8 +24,22 @@ public class BackAll : Habilidad
             // aliados[1].GetComponent<Flee>().enabled = true;
             // aliados[1] = null;
 
-            Debug.Log("Hablidad BACK Aplicada");
+
         }
+        // if (horaDeBackear > enemyInt.tiempoABackear)
+        // {
+        //     foreach (var aliado in enemyInt.aliados)
+        //     {
+        //         aliado.GetComponent<Steering3d>().enabled = false;
+        //         aliado.GetComponent<Flee>().enabled = true;
+        //     }
+
+        //     // aliados[1].GetComponent<Steering3d>().enabled = false;
+        //     // aliados[1].GetComponent<Flee>().enabled = true;
+        //     // aliados[1] = null;
+
+        //     Debug.Log("Hablidad BACK Aplicada");
+        // }
     }
 
 

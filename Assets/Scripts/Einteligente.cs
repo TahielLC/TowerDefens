@@ -3,24 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+
+
 public class Einteligente : Enemy
 {
     [Header("Atacar")]
-
-
     public float inteligenicia = 10f;
-
     public float ataqueInteligente = 4.2f;
     private float sumarAtaque = 0.3f;
+    [Header("Mis Aliados")]
     public List<Enemy> aliados = new List<Enemy>();
+    private Enemy aliadoActual;
     public float rangoAliados = 0;
     [Header("Habilidades")]
     public List<Habilidad> habilidades;
-    public float aMutar = 10f;
+    public float momentoDeMutar = 10f;
     public float tiempoABackear = 25f;
+    int contador = 0;
     private float tiempoTranscurrido = 0;
-    private Enemy aliadoActual;
-
+    [Header("Nivel Mutacion")]
+    public NivelMutacion nivelMutacion = NivelMutacion.Nivel0;
+    private NivelMutacion nivelMutacionAnterior;
     public void ReunirAliados()
     {
 
@@ -49,23 +52,6 @@ public class Einteligente : Enemy
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, rangoAliados);
     }
-
-
-
-    private void Sacrificar()
-    {
-        // Sacrifica el zombi mas cercano a el para salvar su vida, sera hasta 2 y entre mas mutado mas zombiz es capaz de sacrificar
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentLife = maxlife;
-        inteligenciaBase = inteligenicia;
-
-        StartCoroutine(CooldownAtacar());
-
-    }
     public IEnumerator CooldownAtacar()
     {
         float tiempoTranscurrido = 10f;
@@ -92,26 +78,59 @@ public class Einteligente : Enemy
         torreActual.RecibirDanno(ataqueInteligente);
 
     }
+    // lo puedo hacer pasiva de mutacion0 al ser la primera "Habildad adquirida"
+    private void AuntemarInteligencia()
+    {
+        if (tiempoTranscurrido >= momentoDeMutar)
+        {
+            float incrementarInteligencia = 10f;
+            inteligenciaBase += incrementarInteligencia;
+
+            tiempoTranscurrido = 0;
+        }
+        //return true;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        currentLife = maxlife;
+        inteligenciaBase = inteligenicia;
+
+        StartCoroutine(CooldownAtacar());
+
+    }
 
     // Update is called once per frame
-    int contador = 0;
     void Update()
     {
         tiempoABackear -= Time.deltaTime;
         tiempoTranscurrido += Time.deltaTime;
 
-        if (tiempoTranscurrido >= aMutar && contador < 2)
+        AuntemarInteligencia();
+
+        if (nivelMutacion != nivelMutacionAnterior)
         {
-            Debug.Log("Este es el contador " + contador);
+            switch (nivelMutacion)
+            {
+                case NivelMutacion.Nivel1:
+                    habilidades[0].AplicarHabilidad(this);
+                    break;
+                case NivelMutacion.Nivel2:
+                    habilidades[1].AplicarHabilidad(this);
+                    break;
+                default:
+                    Debug.Log("No tiene nivel asignado");
+                    break;
+            }
 
-            habilidades[contador].AplicarHabilidad(this);
-
-            contador += 1;
-            tiempoTranscurrido = 0;
+            // Actualizamos el nivel anterior después de aplicar la habilidad
+            nivelMutacionAnterior = nivelMutacion;
         }
-        //Debug.Log(tiempoABackear);
+
         ReunirAliados();
         TorreDetection();
         LookAtRotation();
+        Debug.Log(nivelMutacion);
     }
 }
