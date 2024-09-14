@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     public float maxlife = 100;
     public float currentLife = 0;
     public Image fillLifeImage;
+    public float inteligenciaBase = 0;
+    public float fuerzaBase = 0;
     public int dañoAUnidad;
     [Header("Atacar")]
     public float danoEstructuras = 10f;
@@ -25,10 +27,14 @@ public class Enemy : MonoBehaviour
     public float range = 1f;
     public Transform rotarHacia;
 
-
     
+
+
+
+
     private void Awake()
     {
+        //hablidad = new HablidadEnemy();
         TorreDetection();
     }
     private void Start()
@@ -90,7 +96,7 @@ public class Enemy : MonoBehaviour
         {
             torreActual = null;
         }
-        
+
     }
     public void LookAtRotation()
     {
@@ -130,5 +136,7 @@ public class Enemy : MonoBehaviour
         TorreDetection();
         LookAtRotation();
     }
+
+
 
 }

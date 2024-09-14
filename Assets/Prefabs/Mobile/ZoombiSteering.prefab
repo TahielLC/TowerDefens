@@ -511,8 +511,10 @@ MonoBehaviour:
   maxlife: 100
   currentLife: 0
   fillLifeImage: {fileID: 4884396602365973407}
+  inteligenciaBase: 0
+  fuerzaBase: 0
   "da\xF1oAUnidad": 0
-  danoEstructuras: 10
+  danoEstructuras: 2
   cooldownAtaque: 2
   torres:
   - {fileID: 0}

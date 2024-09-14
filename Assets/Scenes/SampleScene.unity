@@ -253,15 +253,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8537535165218251088, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.7
+      value: 1.27
       objectReference: {fileID: 0}
     - target: {fileID: 8537535165218251088, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.26
+      value: 4.32
       objectReference: {fileID: 0}
     - target: {fileID: 8537535165218251088, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.918
+      value: -1.27
       objectReference: {fileID: 0}
     - target: {fileID: 8537535165218251088, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
       propertyPath: m_LocalRotation.w
@@ -999,9 +999,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa43b68645fc40408a4edbca0d80a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8951546874318984039, guid: 485aa6cc43c2347478feae357aab44a0, type: 3}
+  enemyPrefab: {fileID: 3829801903201181149, guid: e74e15ff47ce3d644b09b083c31109b7, type: 3}
   puntoSpawn: {fileID: 1930531935}
-  torreTarget: {fileID: 31568828}
+  puntoRetorno: {fileID: 1930790622}
 --- !u!4 &1273927115
 Transform:
   m_ObjectHideFlags: 0
@@ -1010,10 +1010,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273927113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.31, y: 7.65, z: 5.200871}
+  m_LocalPosition: {x: 9.52, y: 8.73, z: -3.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1930790622}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2570,12 +2571,43 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930531934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.54, y: -0.01, z: 7.34}
+  m_LocalPosition: {x: -3.53, y: -0.01, z: -8.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1930790621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1930790622}
+  m_Layer: 0
+  m_Name: PuntoDeRetorno
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1930790622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930790621}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.38, y: -8.46, z: -14.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1273927115}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2015498322 stripped
 Transform:
@@ -2808,6 +2840,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3762299279769658992, guid: 30cebe2aedffd414fb4c0debfad6f6f1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762299279769658992, guid: 30cebe2aedffd414fb4c0debfad6f6f1, type: 3}
       propertyPath: torreTarget
       value: 
       objectReference: {fileID: 31568828}
@@ -2837,7 +2873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6017143002699358659, guid: 30cebe2aedffd414fb4c0debfad6f6f1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

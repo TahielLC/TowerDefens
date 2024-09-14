@@ -8,14 +8,15 @@ public class Efuerte : Enemy
 
 
 
-    private void GritoDfuerza(){
+    private void GritoDfuerza()
+    {
         // habilidad para aumentar la fuerza a los zombiz
     }
-    
+
     // Start is called before the first frame update
     void Start()
     {
-
+        fuerzaBase = fuerza;
     }
 
     // Update is called once per frame

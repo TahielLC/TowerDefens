@@ -6,40 +6,22 @@ using UnityEngine.UI;
 public class Einteligente : Enemy
 {
     [Header("Atacar")]
+
+
     public float inteligenicia = 10f;
+
     public float ataqueInteligente = 4.2f;
     private float sumarAtaque = 0.3f;
     public List<Enemy> aliados = new List<Enemy>();
     public float rangoAliados = 0;
-
+    [Header("Habilidades")]
+    public List<Habilidad> habilidades;
     public float aMutar = 10f;
     public float tiempoABackear = 25f;
     private float tiempoTranscurrido = 0;
     private Enemy aliadoActual;
-    private void LlamadaDBack()
-    {
-        // aca poder especial de este zoombi el cual hace retornar al resto de zombis       
-        ReunirAliados();
-        float horaDeBackear = 5f;
-        if (horaDeBackear > tiempoABackear)
-        {
-            foreach (var aliado in aliados)
-            {
-                aliado.GetComponent<Steering3d>().enabled = false;
-                aliado.GetComponent<Flee>().enabled = true;
-            }
 
-            // aliados[1].GetComponent<Steering3d>().enabled = false;
-            // aliados[1].GetComponent<Flee>().enabled = true;
-            // aliados[1] = null;
-
-            Debug.Log("BACK");
-        }
-
-
-
-    }
-    private void ReunirAliados()
+    public void ReunirAliados()
     {
 
         aliados = Physics.OverlapSphere(transform.position, rangoAliados).Where(currentAliado => currentAliado.GetComponent<Enemy>()).Select(currentAliado => currentAliado.GetComponent<Enemy>()).ToList();
@@ -68,20 +50,7 @@ public class Einteligente : Enemy
         Gizmos.DrawWireSphere(transform.position, rangoAliados);
     }
 
-    private void Mutar(float tiempo)
-    {
-        // el zoombi muta y se vuelve mas inteligente, podiendo hasta curar enemigos ,al atender a backear
-        float darHabilidad = 20f;
-        float incrementarInteligencia = 2f;
-        inteligenicia += incrementarInteligencia;
 
-        if (inteligenicia >= darHabilidad)
-        {
-
-        }
-
-
-    }
 
     private void Sacrificar()
     {
@@ -92,6 +61,8 @@ public class Einteligente : Enemy
     void Start()
     {
         currentLife = maxlife;
+        inteligenciaBase = inteligenicia;
+
         StartCoroutine(CooldownAtacar());
 
     }
@@ -123,17 +94,23 @@ public class Einteligente : Enemy
     }
 
     // Update is called once per frame
+    int contador = 0;
     void Update()
     {
         tiempoABackear -= Time.deltaTime;
         tiempoTranscurrido += Time.deltaTime;
-        if (tiempoTranscurrido >= aMutar)
+
+        if (tiempoTranscurrido >= aMutar && contador < 2)
         {
-            Mutar(tiempoTranscurrido);
+            Debug.Log("Este es el contador " + contador);
+
+            habilidades[contador].AplicarHabilidad(this);
+
+            contador += 1;
             tiempoTranscurrido = 0;
         }
         //Debug.Log(tiempoABackear);
-        LlamadaDBack();
+        ReunirAliados();
         TorreDetection();
         LookAtRotation();
     }
