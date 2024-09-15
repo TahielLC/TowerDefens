@@ -20,20 +20,28 @@ public class Steering3d : MonoBehaviour
     private void Awake()
     {
 
-        velocity = Vector3.zero;
-
-        enemy = this.GetComponent<Enemy>();
     }
     private void Start()
     {
+        velocity = Vector3.zero;
+
+        enemy = this.GetComponent<Enemy>();
+
 
     }
 
+    private void DisableSelf()
+    {
+        Debug.Log("Script desactivado");
+        enabled = false;  // Desactivar este script
+    }
 
     private void Update()
     {
-        target = enemy.torreActual.transform.Find("Origen");
-        Debug.Log(enemy.torreActual);
+        //target = enemy.torreActual.transform.Find("Origen");
+        //        target = enemy.torreActual.transform;
+        // solucionar cuando me salgo del rango de los objetos y no le las paso coordenadas a quien seguir
+//        Debug.Log(enemy.torreActual);
         var desiredVelocity = target.transform.position - transform.position;
         // Si estamos dentro de la distancia mínima, detener el movimiento
         if (desiredVelocity.magnitude < mantenerDist)
@@ -47,7 +55,7 @@ public class Steering3d : MonoBehaviour
 
 
 
-        var steering = desiredVelocity - velocity;
+        var steering = desiredVelocity + velocity;
         steering = Vector3.ClampMagnitude(steering, MaxForce);
         steering /= Mass;
 
