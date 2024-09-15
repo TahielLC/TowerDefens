@@ -366,13 +366,16 @@ MonoBehaviour:
   rotarHacia: {fileID: 3397664190253834902}
   inteligenicia: 10
   ataqueInteligente: 3.2
+  estaAtancando: 0
   aliados: []
   rangoAliados: 6.03
   habilidades:
+  - {fileID: 11400000, guid: 76e46e613276cc945a47d00a46103988, type: 2}
   - {fileID: 11400000, guid: fd5687bc0140dc44aa87f74073b7d98c, type: 2}
   - {fileID: 11400000, guid: e9dcdd1eb9b3ea2479fe02f0bd7047c6, type: 2}
-  aMutar: 10
-  tiempoABackear: 15
+  - {fileID: 11400000, guid: 209cf9673b8a65542b75493e6418fe2f, type: 2}
+  momentoDeMutar: 10
+  tiempoTranscurrido: 0
   nivelMutacion: 0
 --- !u!114 &7989197057578747352
 MonoBehaviour:

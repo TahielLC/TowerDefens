@@ -519,7 +519,7 @@ MonoBehaviour:
   torres:
   - {fileID: 0}
   torreActual: {fileID: 0}
-  range: 17.4
+  range: 30
   rotarHacia: {fileID: 7388346032560645720}
 --- !u!54 &2313370187970634187
 Rigidbody:

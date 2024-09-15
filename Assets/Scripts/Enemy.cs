@@ -27,11 +27,6 @@ public class Enemy : MonoBehaviour
     public float range = 1f;
     public Transform rotarHacia;
 
-
-
-
-
-
     private void Awake()
     {
         TorreDetection();

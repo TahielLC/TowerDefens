@@ -11,6 +11,7 @@ public class Einteligente : Enemy
     public float inteligenicia = 10f;
     public float ataqueInteligente = 4.2f;
     private float sumarAtaque = 0.3f;
+    public bool aprendiendo = true;
     [Header("Mis Aliados")]
     public List<Enemy> aliados = new List<Enemy>();
     private Enemy aliadoActual;
@@ -18,9 +19,8 @@ public class Einteligente : Enemy
     [Header("Habilidades")]
     public List<Habilidad> habilidades;
     public float momentoDeMutar = 10f;
-    public float tiempoABackear = 25f;
+    public float tiempoTranscurrido = 0;
     int contador = 0;
-    private float tiempoTranscurrido = 0;
     [Header("Nivel Mutacion")]
     public NivelMutacion nivelMutacion = NivelMutacion.Nivel0;
     private NivelMutacion nivelMutacionAnterior;
@@ -74,22 +74,12 @@ public class Einteligente : Enemy
     }
     private void Atacar()
     {
+        //estaAtancando = true;
         Debug.Log(ataqueInteligente);
         torreActual.RecibirDanno(ataqueInteligente);
 
     }
-    // lo puedo hacer pasiva de mutacion0 al ser la primera "Habildad adquirida"
-    private void AuntemarInteligencia()
-    {
-        if (tiempoTranscurrido >= momentoDeMutar)
-        {
-            float incrementarInteligencia = 10f;
-            inteligenciaBase += incrementarInteligencia;
 
-            tiempoTranscurrido = 0;
-        }
-        //return true;
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -104,21 +94,29 @@ public class Einteligente : Enemy
     // Update is called once per frame
     void Update()
     {
-        tiempoABackear -= Time.deltaTime;
-        tiempoTranscurrido += Time.deltaTime;
 
-        AuntemarInteligencia();
+        tiempoTranscurrido += Time.deltaTime;
+        // mientras tenga torres en su rango seguira aumentando su inteligencia
+        if (torres.Count != 0)
+        {
+            habilidades[0].AplicarHabilidad(this);
+        }
 
         if (nivelMutacion != nivelMutacionAnterior)
         {
             switch (nivelMutacion)
             {
+
                 case NivelMutacion.Nivel1:
-                    habilidades[0].AplicarHabilidad(this);
-                    break;
-                case NivelMutacion.Nivel2:
                     habilidades[1].AplicarHabilidad(this);
                     break;
+                case NivelMutacion.Nivel2:
+                    habilidades[2].AplicarHabilidad(this);
+                    break;
+                case NivelMutacion.Nivel3:
+                    habilidades[3].AplicarHabilidad(this);
+                    break;
+
                 default:
                     Debug.Log("No tiene nivel asignado");
                     break;

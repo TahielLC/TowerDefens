@@ -684,14 +684,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.06645659, y: -0.8865123, z: 0.44998878, w: 0.08479187}
-  m_LocalPosition: {x: -8.3, y: 5.1, z: 16.6}
+  m_LocalRotation: {x: 0.08352185, y: -0.9029375, z: 0.4109226, w: 0.094184466}
+  m_LocalPosition: {x: 0.98, y: 12.85, z: 17.62}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 54.009, y: -171.138, z: -4.051}
+  m_LocalEulerAnglesHint: {x: 49.271, y: -171.056, z: -6.461}
 --- !u!1001 &1015287916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2572,7 +2572,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zInteligentes: []
-  nivelMutacion: 0
 --- !u!4 &1822250767
 Transform:
   m_ObjectHideFlags: 0
@@ -2919,7 +2918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6017143002699358659, guid: 30cebe2aedffd414fb4c0debfad6f6f1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
