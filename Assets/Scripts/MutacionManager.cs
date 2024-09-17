@@ -19,8 +19,13 @@ public class MutacionManager : MonoBehaviour
     private void ReconocimentoDeZintelig()
     {
         zInteligentes = FindObjectsOfType<Einteligente>();
-        eInteligente = zInteligentes[0];
+        if (eInteligente != null)
+        {
+            eInteligente = zInteligentes[0];
 
+        }
+        else
+            Debug.Log("No se encontro");
         if (zInteligentes.Length > 0)
         {
             foreach (var obj in zInteligentes)

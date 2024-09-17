@@ -42,6 +42,8 @@ public class BackAll : Habilidad
         // }
     }
 
+    public override void AplicarHabilidadFuerte(Efuerte enemyInt)
+    {
 
-
+    }
 }

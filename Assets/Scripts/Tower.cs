@@ -16,10 +16,10 @@ public class Tower : MonoBehaviour
     //public LayerMask layerDetection; // esto es para detectar la entrada del enemigo
     public float range;
     public float dmg = 0;
-    public float timetoShot = 1;
-
+    public float timetoShot;
     public Enemy currenTarget;
     public List<Enemy> listCurrenTargets = new List<Enemy>();
+
     [Header("Life")]
     public float life = 100;
     public float currentLife = 0;
@@ -55,6 +55,7 @@ public class Tower : MonoBehaviour
         Debug.Log("torre inactiva");
         currentLife = 0;
         fillLifeImage.fillAmount = 0;
+        gameObject.SetActive(false);
     }
     private void Start()
     {
@@ -97,6 +98,7 @@ public class Tower : MonoBehaviour
     }
     private void Shoot()
     {
+        Debug.Log(currenTarget.currentLife + " vida del zonbi");
         currenTarget.TakeDamage(dmg);
     }
 

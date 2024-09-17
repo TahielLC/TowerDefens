@@ -6,5 +6,6 @@ public abstract class Habilidad : ScriptableObject
 {
 
     public abstract void AplicarHabilidad(Einteligente enemyInt);
+    public abstract void AplicarHabilidadFuerte(Efuerte enemyInt);
 
 }

@@ -19,7 +19,9 @@ public class Enemy : MonoBehaviour
     public float inteligenciaBase = 0;
     public float fuerzaBase = 0;
     public int dañoAUnidad;
-    [Header("Atacar")]
+    public float durezaSimple = 1f;
+
+    [Header("Atacar De Enemy")]
     public float danoEstructuras = 10f;
     public float cooldownAtaque = 2f;
     public List<Tower> torres = new List<Tower>();
@@ -39,8 +41,14 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(float dmg)
     {
+        // primero el danno sera hacia la dureza , si es que tiene mas de 1 dureza
+        float antiguaDureza = durezaSimple;
+        if (durezaSimple > 1f)
+        {
+            durezaSimple -= dmg;
+            dmg -= antiguaDureza;
+        }
         var newLife = currentLife - dmg;
-
 
         if (isDead)
         {
@@ -51,6 +59,7 @@ public class Enemy : MonoBehaviour
         {
             Ondead();
         }
+
         currentLife = newLife;
         var fillValue = currentLife * 1 / 100;
 
@@ -100,6 +109,8 @@ public class Enemy : MonoBehaviour
         }
 
     }
+    // hacer uso de la durera implementar una barra de dureza que 
+    // vaya de menor a mayor con un maximo de 5 de dureza , maximo es de (10)
 
 
     private IEnumerator AnimationDamge()

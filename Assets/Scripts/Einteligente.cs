@@ -11,16 +11,20 @@ public class Einteligente : Enemy
     public float inteligenicia = 10f;
     public float ataqueInteligente = 4.2f;
     private float sumarAtaque = 0.3f;
+    public float cooldownAtk = 2f;
     public bool aprendiendo = true;
+
     [Header("Mis Aliados")]
     public List<Enemy> aliados = new List<Enemy>();
     private Enemy aliadoActual;
     public float rangoAliados = 0;
+
     [Header("Habilidades")]
     public List<Habilidad> habilidades;
     public float momentoDeMutar = 10f;
     public float tiempoTranscurrido = 0;
     int contador = 0;
+
     [Header("Nivel Mutacion")]
     public NivelMutacion nivelMutacion = NivelMutacion.Nivel0;
     private NivelMutacion nivelMutacionAnterior;
@@ -61,13 +65,13 @@ public class Einteligente : Enemy
             if (torreActual)
             {
                 Atacar();
-                transcurrido += cooldownAtaque;
+                transcurrido += cooldownAtk;
                 if (tiempoTranscurrido == transcurrido)
                 {
                     ataqueInteligente += sumarAtaque;
                     transcurrido = 0;
                 }
-                yield return new WaitForSeconds(cooldownAtaque);
+                yield return new WaitForSeconds(cooldownAtk);
             }
             yield return null;
         }
