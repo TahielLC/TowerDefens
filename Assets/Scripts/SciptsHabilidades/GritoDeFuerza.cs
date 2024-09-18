@@ -2,19 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "GritoDeFuerza", menuName = "Habilidad/GritoDeFuerza")]
 public class GritoDeFuerza : Habilidad
 {
     public override void AplicarHabilidad(Einteligente enemyInt)
     {
         throw new System.NotImplementedException();
     }
+    public float aumentoDeDureza = 3f;
+    public override void AplicarHabilidadFuerte(Efuerte enemyFuerte)
+    {
+        if (enemyFuerte.nivelMutacion == NivelMutacionFuerte.Nivel1)
+        {
+            foreach (var aliado in enemyFuerte.aliados)
+            {
+                aliado.durezaSimple += aumentoDeDureza;
+            }
 
-    public override void AplicarHabilidadFuerte(Efuerte enemyInt)
-    {
-        
+        }
     }
-    private void GritoDfuerza()
-    {
-        // habilidad para aumentar la fuerza a los zombiz lo cual le daria mas dureza 
-    }
+
 }

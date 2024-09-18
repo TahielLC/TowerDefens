@@ -24,8 +24,8 @@ public class Efuerte : Enemy
     public float dureza;
 
     [Header("Nivel de Mutacion")]
-    public NivelMutacion nivelMutacion = NivelMutacion.Nivel0;
-    private NivelMutacion nivelMutacionAnterior;
+    public NivelMutacionFuerte nivelMutacion = NivelMutacionFuerte.Nivel0;
+    private NivelMutacionFuerte nivelMutacionAnterior;
 
     void Start()
     {
@@ -38,12 +38,37 @@ public class Efuerte : Enemy
     // Update is called once per frame
     void Update()
     {
+        if (nivelMutacion != nivelMutacionAnterior)
+        {
+            switch (nivelMutacion)
+            {
+                case NivelMutacionFuerte.Nivel0:
+                    habilidades[0].AplicarHabilidadFuerte(this);
+                    break;
+                case NivelMutacionFuerte.Nivel1:
+                    habilidades[1].AplicarHabilidadFuerte(this);
+                    break;
+                case NivelMutacionFuerte.Nivel2:
+                    habilidades[2].AplicarHabilidadFuerte(this);
+                    break;
+                // case NivelMutacionFuerte.Nivel3:
+                //     habilidades[3].AplicarHabilidadFuerte(this);
+                //     break;
+
+                default:
+                    Debug.Log("No tiene nivel asignado");
+                    break;
+            }
+
+            // Actualizamos el nivel anterior después de aplicar la habilidad
+            nivelMutacionAnterior = nivelMutacion;
+        }
 
         ReunirAliados();
         TorreDetection();
         LookAtRotation();
     }
-    //Refactorizar de la clase padre hacer que resiva un lista y trabaje con ella
+    //Refactorizar de la clase padre hacer que resiba un lista y trabaje con ella
     public void ReunirAliados()
     {
 
@@ -108,26 +133,13 @@ public class Efuerte : Enemy
 
 
 
-
-
-
-    private void VelocidadAliadosAtk()
+    private void Ira()
     {
-        // que active un aura de velocidad de ataque por un momento
-    }
-
-    private void AutoRegeneracion()
-    {
-        // activa durante el ataque una regeneracion de vida 
-    }
-
-    private void AumentoDeFuerza()
-    {
-        //Durante el ataque de este sobre las torres ganara mas fuerza , PASIVA
+        // se bufea durante 1.5 de velocidad de ataque y danio  
     }
     private void Irse()
     {
-        // se existe una posibilidad de que auto backee solo,
+        // se existe una posibilidad de que auto backee solo
     }
     private void GolpeMortal()
     {

@@ -81,18 +81,20 @@ public class Enemy : MonoBehaviour
     }
     private void Atacar()
     {
-
-
+        //        Debug.Log(" Estoy atacando a :" + torreActual);
         torreActual.RecibirDanno(danoEstructuras);
 
     }
     public void TorreDetection()
     {
+        // corregir la parte esta esta atacando a las torres de manera aleatoria
         torres = Physics.OverlapSphere(transform.position, range).Where(currentTorre => currentTorre.GetComponent<Tower>()).Select(currentTorre => currentTorre.GetComponent<Tower>()).ToList();
 
         if (torres.Count > 0)
         {
+
             torreActual = torres[0];
+            // Debug.Log(torreActual + " Esta es la torre actual ");
 
         }
         else if (torres.Count == 0)
@@ -103,6 +105,7 @@ public class Enemy : MonoBehaviour
     }
     public void LookAtRotation()
     {
+
         if (torreActual)
         {
             rotarHacia.LookAt(torreActual.transform);

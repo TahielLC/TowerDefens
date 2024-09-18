@@ -321,17 +321,23 @@ MonoBehaviour:
   inteligenciaBase: 0
   fuerzaBase: 0
   "da\xF1oAUnidad": 0
+  durezaSimple: 1
+  danoEstructuras: 10
+  cooldownAtaque: 2
   torres: []
   torreActual: {fileID: 0}
-  range: 15
+  range: 20
   rotarHacia: {fileID: 8682552465117498349}
-  fuerza: 5
-  fuerzaGanadaAtq: 0
+  fuerza: 10
+  fuerzaGanadaAtq: 1
   velocidadAtaque: 10
   atacando: 0
   aliados: []
-  rangoAliados: 8
-  habilidades: []
+  rangoAliados: 15
+  habilidades:
+  - {fileID: 11400000, guid: 063f441bbcf9dad4e804bbe41220c33d, type: 2}
+  - {fileID: 11400000, guid: 063f441bbcf9dad4e804bbe41220c33d, type: 2}
+  - {fileID: 11400000, guid: 66a3f208698f57f479864801eb8471fc, type: 2}
   dureza: 2
   nivelMutacion: 0
 --- !u!54 &4920756601451866830

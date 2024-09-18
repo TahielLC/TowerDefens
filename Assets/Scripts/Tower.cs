@@ -98,7 +98,7 @@ public class Tower : MonoBehaviour
     }
     private void Shoot()
     {
-        Debug.Log(currenTarget.currentLife + " vida del zonbi");
+//        Debug.Log(currenTarget.currentLife + " vida del zonbi");
         currenTarget.TakeDamage(dmg);
     }
 

@@ -12,19 +12,32 @@ public class SpawPoint : MonoBehaviour
 
     //refactorizar esto
     //public Transform torreTarget;
-    public Transform torreTargetAdentro;
+    private Tower[] torresTargetEscena;
+    private Transform torreTarget;
     // Start is called before the first frame update
     void Start()
-    {
-        //  torreTarget = enemyInstancia.GetComponent<Enemy>().torreActual.transform;
-    }
-    private void Awake()
     {
         Spaw();
 
     }
+    private void Awake()
+    {
+
+    }
     void Spaw()
     {
+        torresTargetEscena = FindObjectsOfType<Tower>();
+        if (torresTargetEscena.Length > 0)
+        {
+            foreach (var obj in torresTargetEscena)
+            {
+                Debug.Log("Objeto encontrado: " + obj.gameObject.name);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No se encontraron objetos con MyComponent en la escena.");
+        }
         for (int i = 0; i < prefab.Length; i++)
         {
             // Calcula el ángulo para cada objeto
@@ -33,10 +46,11 @@ public class SpawPoint : MonoBehaviour
 
 
             laIstancia = Instantiate(prefab[i], newSpawPoins, Quaternion.identity);
-            torreTargetAdentro = laIstancia.GetComponent<Enemy>().torreActual.transform;
+            torreTarget = torresTargetEscena[0].transform;
+            //torreTarget = laIstancia.GetComponent<Enemy>().torreActual.transform;
 
-            laIstancia.GetComponent<Steering3d>().target = torreTargetAdentro.Find("Origen");
-            laIstancia.GetComponent<Flee>().target = torreTargetAdentro.Find("Origen");
+            laIstancia.GetComponent<Steering3d>().target = torreTarget.Find("Origen");
+            laIstancia.GetComponent<Flee>().target = torreTarget.Find("Origen");
             // Transform torreTarget = prefab[i].GetComponent<Enemy>().torreActual.transform;
             //refactorizar esto
             //prefab[i].GetComponent<Steering3d>().target = torreTarget.Find("Origen");

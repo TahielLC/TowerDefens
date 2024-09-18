@@ -514,8 +514,9 @@ MonoBehaviour:
   inteligenciaBase: 0
   fuerzaBase: 0
   "da\xF1oAUnidad": 0
-  danoEstructuras: 2
-  cooldownAtaque: 2
+  durezaSimple: 1
+  danoEstructuras: 3
+  cooldownAtaque: 5
   torres:
   - {fileID: 0}
   torreActual: {fileID: 0}
