@@ -515,7 +515,7 @@ MonoBehaviour:
   fuerzaBase: 0
   "da\xF1oAUnidad": 0
   durezaSimple: 1
-  danoEstructuras: 3
+  danoEstructuras: 5
   cooldownAtaque: 5
   torres:
   - {fileID: 0}

@@ -16,7 +16,7 @@ public class AumentarVelocidad : Habilidad
     {
         if (enemyFuerte.nivelMutacion == NivelMutacionFuerte.Nivel2)
         {
-            Debug.Log("Habilidad de velocidad aplicadad");
+            Debug.Log("Habilidad de velocidad aplicada");
             enemyFuerte.StartCoroutine(ActivarDurante(enemyFuerte));
 
         }

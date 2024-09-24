@@ -335,9 +335,10 @@ MonoBehaviour:
   aliados: []
   rangoAliados: 15
   habilidades:
-  - {fileID: 11400000, guid: 063f441bbcf9dad4e804bbe41220c33d, type: 2}
+  - {fileID: 11400000, guid: 57e403f6661a7904b8bb6fd4676fdf13, type: 2}
   - {fileID: 11400000, guid: 063f441bbcf9dad4e804bbe41220c33d, type: 2}
   - {fileID: 11400000, guid: 66a3f208698f57f479864801eb8471fc, type: 2}
+  - {fileID: 11400000, guid: 445cf9fa5a0c48144bd57289d658e992, type: 2}
   dureza: 2
   nivelMutacion: 0
 --- !u!54 &4920756601451866830

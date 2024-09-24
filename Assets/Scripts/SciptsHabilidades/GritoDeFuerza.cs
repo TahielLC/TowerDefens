@@ -14,6 +14,7 @@ public class GritoDeFuerza : Habilidad
     {
         if (enemyFuerte.nivelMutacion == NivelMutacionFuerte.Nivel1)
         {
+            Debug.Log("Estoy en Grito de fuerza");
             foreach (var aliado in enemyFuerte.aliados)
             {
                 aliado.durezaSimple += aumentoDeDureza;

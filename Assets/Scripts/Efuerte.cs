@@ -51,9 +51,9 @@ public class Efuerte : Enemy
                 case NivelMutacionFuerte.Nivel2:
                     habilidades[2].AplicarHabilidadFuerte(this);
                     break;
-                // case NivelMutacionFuerte.Nivel3:
-                //     habilidades[3].AplicarHabilidadFuerte(this);
-                //     break;
+                case NivelMutacionFuerte.Nivel3:
+                    habilidades[3].AplicarHabilidadFuerte(this);
+                    break;
 
                 default:
                     Debug.Log("No tiene nivel asignado");
@@ -107,7 +107,7 @@ public class Efuerte : Enemy
 
                 if (atacando && !torreActual.torreInactiva)
                 {
-                    Debug.Log("Entro a la fuerza ganada: " + fuerzaGanadaAtq);
+                    // Debug.Log("Entro a la fuerza ganada: " + fuerzaGanadaAtq);
                     fuerzaGanadaAtq++;
                 }
                 acumularFuerza += fuerzaBase + fuerzaGanadaAtq;
@@ -133,10 +133,7 @@ public class Efuerte : Enemy
 
 
 
-    private void Ira()
-    {
-        // se bufea durante 1.5 de velocidad de ataque y danio  
-    }
+    // posibles habilidades a implementar
     private void Irse()
     {
         // se existe una posibilidad de que auto backee solo
