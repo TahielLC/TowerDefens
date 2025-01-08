@@ -28,11 +28,15 @@ public class Enemy : MonoBehaviour
     public Tower torreActual;
     public float range = 1f;
     public Transform rotarHacia;
-
+    private Tower[] torresTargetEscena;
+    // Punto de fallback cuando no hay torres
+    public Transform puntoFallback;
     private void Awake()
     {
+        //TorresEnEscena();
         TorreDetection();
     }
+
     private void Start()
     {
 
@@ -81,7 +85,7 @@ public class Enemy : MonoBehaviour
     }
     private void Atacar()
     {
-        //        Debug.Log(" Estoy atacando a :" + torreActual);
+        //Debug.Log(" Estoy atacando a :" + torreActual);
         torreActual.RecibirDanno(danoEstructuras);
 
     }
@@ -141,8 +145,25 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
+
+        if (torreActual == null)
+        {
+            Debug.Log("Se acabaron las torres " + torreActual);
+
+            return;
+        }
         TorreDetection();
-        LookAtRotation();
+        if (torreActual == null && puntoFallback != null)
+        {
+
+            rotarHacia.LookAt(puntoFallback.position);
+
+        }
+        else
+        {
+            LookAtRotation();
+        }
+
     }
 
 

@@ -247,9 +247,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4427475691948279407, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4998971013230257078, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
       propertyPath: life
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8537535165218251088, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
       propertyPath: m_RootOrder
@@ -265,7 +269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8537535165218251088, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.27
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 8537535165218251088, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
       propertyPath: m_LocalRotation.w
@@ -868,7 +872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8623976158995777098, guid: 485aa6cc43c2347478feae357aab44a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8
+      value: 5.13
       objectReference: {fileID: 0}
     - target: {fileID: 8623976158995777098, guid: 485aa6cc43c2347478feae357aab44a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -876,7 +880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8623976158995777098, guid: 485aa6cc43c2347478feae357aab44a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.91
+      value: -8.92
       objectReference: {fileID: 0}
     - target: {fileID: 8623976158995777098, guid: 485aa6cc43c2347478feae357aab44a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -990,7 +994,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1273927114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,7 +1002,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273927113}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: daa43b68645fc40408a4edbca0d80a34, type: 3}
   m_Name: 
@@ -1360,7 +1364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1703474148604266937, guid: 718daa0bc95d2234587d048eb77138d9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6468692341977199482, guid: 718daa0bc95d2234587d048eb77138d9, type: 3}
       propertyPath: dmg
@@ -2764,7 +2768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8449311229740455877, guid: 718daa0bc95d2234587d048eb77138d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.43
+      value: -14.74
       objectReference: {fileID: 0}
     - target: {fileID: 8449311229740455877, guid: 718daa0bc95d2234587d048eb77138d9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2772,7 +2776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8449311229740455877, guid: 718daa0bc95d2234587d048eb77138d9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.37
+      value: -7.63
       objectReference: {fileID: 0}
     - target: {fileID: 8449311229740455877, guid: 718daa0bc95d2234587d048eb77138d9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2859,9 +2863,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 4427475691948279407, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4998971013230257078, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
       propertyPath: life
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8537535165218251088, guid: c4d15bad7735e1a42842c9521186d566, type: 3}
       propertyPath: m_RootOrder
@@ -3082,7 +3090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6017143002699358659, guid: 30cebe2aedffd414fb4c0debfad6f6f1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
