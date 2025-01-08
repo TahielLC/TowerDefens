@@ -19,9 +19,11 @@ public class AumentarInteligencia : Habilidad
 
     }
 
-    private void Start()
+    public override void AplicarHabilidadFuerte(Efuerte enemyInt)
     {
-        Debug.Log("Pasiva Activa");
+
     }
+
+
 
 }

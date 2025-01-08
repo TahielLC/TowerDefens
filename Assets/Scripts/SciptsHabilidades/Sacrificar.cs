@@ -44,4 +44,8 @@ public class Sacrificar : Habilidad
 
     }
 
+    public override void AplicarHabilidadFuerte(Efuerte enemyInt)
+    {
+
+    }
 }

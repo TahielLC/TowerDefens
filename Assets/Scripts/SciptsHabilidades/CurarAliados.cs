@@ -25,5 +25,8 @@ public class CurarAliados : Habilidad
 
     }
 
+    public override void AplicarHabilidadFuerte(Efuerte enemyInt)
+    {
 
+    }
 }

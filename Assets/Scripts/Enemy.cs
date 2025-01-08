@@ -19,18 +19,24 @@ public class Enemy : MonoBehaviour
     public float inteligenciaBase = 0;
     public float fuerzaBase = 0;
     public int dañoAUnidad;
-    [Header("Atacar")]
+    public float durezaSimple = 1f;
+
+    [Header("Atacar De Enemy")]
     public float danoEstructuras = 10f;
     public float cooldownAtaque = 2f;
     public List<Tower> torres = new List<Tower>();
     public Tower torreActual;
     public float range = 1f;
     public Transform rotarHacia;
-
+    private Tower[] torresTargetEscena;
+    // Punto de fallback cuando no hay torres
+    public Transform puntoFallback;
     private void Awake()
     {
+        //TorresEnEscena();
         TorreDetection();
     }
+
     private void Start()
     {
 
@@ -39,8 +45,14 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(float dmg)
     {
+        // primero el danno sera hacia la dureza , si es que tiene mas de 1 dureza
+        float antiguaDureza = durezaSimple;
+        if (durezaSimple > 1f)
+        {
+            durezaSimple -= dmg;
+            dmg -= antiguaDureza;
+        }
         var newLife = currentLife - dmg;
-
 
         if (isDead)
         {
@@ -51,6 +63,7 @@ public class Enemy : MonoBehaviour
         {
             Ondead();
         }
+
         currentLife = newLife;
         var fillValue = currentLife * 1 / 100;
 
@@ -72,18 +85,20 @@ public class Enemy : MonoBehaviour
     }
     private void Atacar()
     {
-
-
+        //Debug.Log(" Estoy atacando a :" + torreActual);
         torreActual.RecibirDanno(danoEstructuras);
 
     }
     public void TorreDetection()
     {
+        // corregir la parte esta esta atacando a las torres de manera aleatoria
         torres = Physics.OverlapSphere(transform.position, range).Where(currentTorre => currentTorre.GetComponent<Tower>()).Select(currentTorre => currentTorre.GetComponent<Tower>()).ToList();
 
         if (torres.Count > 0)
         {
+
             torreActual = torres[0];
+            // Debug.Log(torreActual + " Esta es la torre actual ");
 
         }
         else if (torres.Count == 0)
@@ -94,12 +109,15 @@ public class Enemy : MonoBehaviour
     }
     public void LookAtRotation()
     {
+
         if (torreActual)
         {
             rotarHacia.LookAt(torreActual.transform);
         }
 
     }
+    // hacer uso de la durera implementar una barra de dureza que 
+    // vaya de menor a mayor con un maximo de 5 de dureza , maximo es de (10)
 
 
     private IEnumerator AnimationDamge()
@@ -127,8 +145,25 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
+
+        if (torreActual == null)
+        {
+            Debug.Log("Se acabaron las torres " + torreActual);
+
+            return;
+        }
         TorreDetection();
-        LookAtRotation();
+        if (torreActual == null && puntoFallback != null)
+        {
+
+            rotarHacia.LookAt(puntoFallback.position);
+
+        }
+        else
+        {
+            LookAtRotation();
+        }
+
     }
 
 

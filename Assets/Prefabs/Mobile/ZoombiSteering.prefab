@@ -514,13 +514,15 @@ MonoBehaviour:
   inteligenciaBase: 0
   fuerzaBase: 0
   "da\xF1oAUnidad": 0
-  danoEstructuras: 2
-  cooldownAtaque: 2
+  durezaSimple: 1
+  danoEstructuras: 5
+  cooldownAtaque: 5
   torres:
   - {fileID: 0}
   torreActual: {fileID: 0}
-  range: 30
+  range: 15
   rotarHacia: {fileID: 7388346032560645720}
+  puntoFallback: {fileID: 159349853958974696, guid: 5ab0e72461bfa5e40bad2d8bcc51cf54, type: 3}
 --- !u!54 &2313370187970634187
 Rigidbody:
   m_ObjectHideFlags: 0
